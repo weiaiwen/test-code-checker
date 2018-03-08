@@ -34,4 +34,5 @@ module.exports = function(content, map, meta) {
         warning += tmp
     })
     content += `console.warn('${warning}')`
+    this.async()(null, content, map, meta) 
 }
