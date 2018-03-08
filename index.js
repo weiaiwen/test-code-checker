@@ -25,14 +25,13 @@ module.exports = function(content, map, meta) {
             })
         }
     })
-    if (!testCodeArr.length) {
-        return
+    if (testCodeArr.length) {
+        let warning = '发现测试代码标识!!!\n是不是有不该上传的代码?\n这里展示标识下面的10行代码:\n'
+        testCodeArr.map(item => {
+            const tmp = `${item.line} - line: ${item.index}\n`
+            warning += tmp
+        })
+        content += `console.warn('${warning}')`
     }
-    let warning = '发现测试代码标识!!!\n是不是有不该上传的代码?\n这里展示标识下面的10行代码:\n'
-    testCodeArr.map(item => {
-        const tmp = `${item.line} - line: ${item.index}\n`
-        warning += tmp
-    })
-    content += `console.warn('${warning}')`
     this.async()(null, content, map, meta) 
 }
