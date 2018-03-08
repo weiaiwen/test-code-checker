@@ -1,0 +1,24 @@
+{
+  "name": "test-code-checker",
+  "version": "1.0.0",
+  "description": "本项目是个webpack的loader，请放在所有loader的最后一位。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weiaiwen/test-code-checker.git"
+  },
+  "keywords": [
+    "test",
+    "code",
+    "checker"
+  ],
+  "author": "Aiwen Wei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weiaiwen/test-code-checker/issues"
+  },
+  "homepage": "https://github.com/weiaiwen/test-code-checker#readme"
+}
