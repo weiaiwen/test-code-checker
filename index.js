@@ -33,5 +33,5 @@ module.exports = function(content, map, meta) {
         })
         content += `console.warn('${warning}')`
     }
-    this.async()(null, content, map, meta) 
+    this.callback(null, content, map, meta)
 }
