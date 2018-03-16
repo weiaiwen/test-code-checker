@@ -43,5 +43,6 @@ module.exports = function (content, map, meta) {
         }
         content = strArr.join('\n')
     }
+    
     this.async()(null, content, map, meta)
 }
