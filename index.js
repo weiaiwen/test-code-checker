@@ -33,7 +33,7 @@ module.exports = function (content, map, meta) {
     if (testCodeArr.length) {
         let warning = '发现测试代码标识!!!是不是有不该上传的代码?这里展示标识下面的10行代码:\n'
         testCodeArr.map(item => {
-            warning += `${item.line} :${item.index}\n`
+            warning += `line ${item.index}\t\t ${item.line} \n`
         })
         consoleWarn = `console.warn(${JSON.stringify(warning).replace(new RegExp('/', 'g'), '\\/')});`
         if (!scriptIndex) {
