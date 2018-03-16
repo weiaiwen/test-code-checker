@@ -36,7 +36,11 @@ module.exports = function (content, map, meta) {
             warning += `${item.line}\n`
         })
         consoleWarn = `console.warn(${JSON.stringify(warning).replace(new RegExp('/', 'g'), '\\/')});`
-        strArr[scriptIndex] = `<script>\n${consoleWarn}`
+        if (!scriptIndex) {
+            strArr[0] = `${consoleWarn}\n${strArr[0]}`
+        } else {
+            strArr[scriptIndex] = `<script>\n${consoleWarn}`
+        }
         content = strArr.join('\n')
     }
     this.async()(null, content, map, meta)
