@@ -36,7 +36,7 @@ if (testCodeArr.length) {
     })
     let consoleWarn = `console.warn(${JSON.stringify(warning).replace(new RegExp('/', 'g'), '\\/')});`
     if (!scriptIndex) {
-        strArr[0] = `${consoleWarn}\n${strArr[0]}`
+        strArr.push(consoleWarn)
     } else {
         strArr[scriptIndex] = `<script>${consoleWarn}`
     }
