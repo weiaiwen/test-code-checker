@@ -7,11 +7,11 @@ module.exports = function (content, map, meta) {
     strArr.map((line, index) => {
         if (/<script>/.test(line)) {
             scriptIndex = index
-        }        
+        }
         if (/^\s*\/\/ test\s*/.test(line)) {
             testZone = true
             testCodeArr.push({
-                line: '// test',
+                line,
                 index
             })
             return
@@ -38,7 +38,7 @@ if (testCodeArr.length) {
     if (!scriptIndex) {
         strArr[0] = `${consoleWarn}\n${strArr[0]}`
     } else {
-        strArr[scriptIndex] = `<script>\n${consoleWarn}`
+        strArr[scriptIndex] = `<script>${consoleWarn}`
     }
     content = strArr.join('\n')
 }
